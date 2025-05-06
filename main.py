@@ -151,7 +151,7 @@ async def ask_bot(req: QueryRequest, user: str = Depends(get_current_user)):
     chunk_urls = store.get('urls', [])
     if not idx or not chunks:
         return {"answer": "No content indexed yet for this domain. Please create a chatbot first."}
-    user_emb = openai.embeddings.create(input=req.question, model="text-embedding-3-small").data[0]..embedding
+    user_emb = openai.embeddings.create(input=req.question, model="text-embedding-3-small").data[0].embedding
     D, I = idx.search(np.array([user_emb]).astype('float32'), k=3)
     selected_chunks = []
     selected_urls = []
