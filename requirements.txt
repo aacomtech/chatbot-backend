@@ -1,3 +1,7 @@
 fastapi
 uvicorn
 trafilatura
+openai
+faiss-cpu
+beautifulsoup4
+requests
